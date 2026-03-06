@@ -1,0 +1,36 @@
+.venv/
+**/.venv/
+.pytest_cache/
+**/.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+*.log
+coverage.xml
+.coverage
+htmlcov/
+
+# Local experiment artifacts
+CPS Implementation/implementation_plan.md
+CPS Implementation/data/raw/
+CPS Implementation/models/
+CPS Implementation/reports/
+CPS Implementation/results/
+CPS Implementation/page8.png
+CPS Implementation/table3.png
+CPS Implementation/table4.png
+CPS Implementation/table5.png
+Optimizing_V2G_Dynamics_An_AI-Enhanced_Secure_Protocol_for_Energy_Management_in_Industrial_Cyber-Physical_Systems.pdf
