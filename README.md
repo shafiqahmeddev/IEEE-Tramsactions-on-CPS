@@ -1,16 +1,24 @@
-# AI-Enhanced Secure V2G Protocol Implementation
+# Optimizing V2G Dynamics
 
-Python implementation of the article's secure Vehicle-to-Grid authentication and anomaly-detection workflow for industrial cyber-physical systems.
+Official implementation repository for the article *Optimizing V2G Dynamics: An AI-Enhanced Secure Protocol for Energy Management in Industrial Cyber-Physical Systems*.
 
 ## Overview
 
-This repository contains:
-- a multi-entity protocol implementation with user, gateway, charge-station, and control-server roles
+This codebase implements the article's secure Vehicle-to-Grid workflow for industrial cyber-physical systems, combining:
+- a multi-entity authentication protocol with user, gateway, charge-station, and control-server roles
 - software-emulated WPUF and RPUF components
-- cost-analysis utilities for the protocol tables used in the article
-- an anomaly-detection pipeline on KDD Cup 1999 using an LSTM model and an MLP baseline
+- protocol cost-analysis utilities
+- an anomaly-detection pipeline on KDD Cup 1999 using an LSTM model with an MLP baseline
 
-## Repository Structure
+## Highlights
+
+- End-to-end protocol flow with session-key establishment and message tracing
+- Secure-by-default cryptographic implementation choices for hashing, key derivation, and replay protection
+- Table-generation utilities for implementation-side performance summaries
+- Modular Python package layout for protocol, ML, and analysis components
+- Automated test coverage for protocol behavior, PUF logic, cost utilities, and ML execution paths
+
+## Repository Layout
 
 ```text
 .
@@ -27,7 +35,7 @@ This repository contains:
 `-- LICENSE
 ```
 
-## Quick Start
+## Getting Started
 
 ```powershell
 cd "CPS Implementation"
@@ -36,15 +44,15 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-## Main Commands
+## Primary Commands
 
-Protocol demo:
+Protocol demonstration:
 
 ```powershell
 .\.venv\Scripts\python.exe -m v2g_cps.protocol.demo
 ```
 
-ML training pipeline:
+Model training:
 
 ```powershell
 .\.venv\Scripts\python.exe -m v2g_cps.ml.train --dataset-root data/raw/kddcup99
@@ -56,17 +64,17 @@ Full implementation pipeline:
 .\.venv\Scripts\python.exe -m v2g_cps.run_pipeline
 ```
 
-## Generated Outputs
+## Local Outputs
 
-Running the full pipeline locally produces:
+Running the implementation pipeline locally produces:
 - protocol traces
 - implementation tables and summaries
 - a Markdown implementation report
 - ML metrics and local model checkpoints
 
-These outputs are generated locally and ignored by Git on purpose.
+These outputs are generated locally and intentionally ignored by Git.
 
-## Security and Cryptography
+## Security
 
 The implementation uses secure-by-default engineering choices, including:
 - transcript-bound HMAC-SHA256
@@ -76,13 +84,7 @@ The implementation uses secure-by-default engineering choices, including:
 - constant-time comparisons for sensitive equality checks
 - replay-cache enforcement and timestamp freshness checks
 
-## Public Repo Hygiene
-
-- Do not commit secrets, API tokens, private keys, or local `.env` files.
-- Do not commit virtual environments, caches, raw datasets, generated traces, or model checkpoints.
-- Do not commit third-party licensed PDFs or datasets unless redistribution rights are clear.
-
-See `SECURITY.md` for disclosure guidance.
+See `SECURITY.md` for disclosure guidance and repository publishing rules.
 
 ## License
 
